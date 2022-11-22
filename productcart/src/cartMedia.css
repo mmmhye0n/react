@@ -1,0 +1,44 @@
+@media screen and (max-width: 1024px) {
+    body {
+        width: 100%;
+        margin: 0 auto;
+        padding: 2%;
+        box-sizing: border-box;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .shop_cartleft {
+        width: 70%;
+    }
+
+    .shop_cartright {
+        width: 30%;
+    }
+
+    .shop_Btnlist {
+        flex-direction: column;
+        height: 68px;
+        margin-top: 15px;
+    }
+
+    .shop_Btnleft {
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .shop_Btnright {
+        display: none;
+    }
+
+    .shoptotalpayBox {
+        margin-top: 0px;
+    }
+
+    .payBtnw,
+    .payBtnb {
+        margin: 0;
+        width: 100%;
+    }
+}

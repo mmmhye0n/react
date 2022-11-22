@@ -1,0 +1,196 @@
+/* ========================= 공통 ========================== */
+
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+@font-face {
+  font-family: 'IBMPlexSansKR-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-family: 'IBMPlexSansKR-Regular';
+}
+
+body {
+  width: 1024px;
+  margin: auto;
+  box-sizing: blike-box;
+}
+
+/* ===================== 메인 중복 ======================== */
+
+main {
+  margin: 0 auto;
+  color: #353535;
+}
+
+main h1 {
+  font-size: 1.4em;
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 30px;
+}
+
+main hr {
+  border: 0px;
+  height: 1px;
+  background-color: #c0c0c0;
+}
+
+main .shop_likeboxnone {
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
+  border-bottom: 1px solid #c0c0c0;
+}
+
+.hidden {
+  display: none;
+}
+
+.shop_likeboxnone span {
+  font-size: 0.9em;
+  color: #797979;
+}
+
+/* 이미지 박스 */
+.shop_likelist .likelistimg {
+  display: block;
+  width: 90px;
+  height: 90px;
+}
+
+.shop_likelist .likeIcon {
+  width: 12px;
+  margin-left: calc(12px / 2);
+}
+
+.shop_likelist .likedeleteIcon {
+  width: 22px;
+  cursor: pointer;
+}
+
+/* 카트 박스 */
+
+.shop_likebox,
+.shop_likeleft,
+.shop_likeright {
+  display: flex;
+  align-items: center;
+}
+
+.shop_likebox {
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+/* 왼쪽 박스 */
+
+.shop_likeleft {
+  width: 60%;
+}
+
+.shop_likeleft a {
+  text-decoration: none;
+  color: #353535;
+}
+
+.likelisttextbox {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.shop_likeleft strong {
+  font-size: 1.0em;
+}
+
+.shop_likeleft span {
+  font-size: 0.7em;
+}
+
+.shop_likeleft input,
+.shop_likeleft a {
+  margin-right: 5%;
+}
+
+/* 오른쪽 박스 */
+.shop_likeright input {
+  width: 25px;
+  text-align: center;
+}
+
+.shop_likeright {
+  justify-content: space-evenly;
+  width: 7%;
+}
+
+.shop_likeright span {
+  width: 70px;
+  text-align: center;
+}
+
+.product_checkNum {
+  display: flex;
+  box-sizing: border-box;
+  width: 70%;
+}
+
+.shop_likeright a {
+  width: 25px;
+  background-color: white;
+  text-decoration: none;
+  border: solid;
+  border-width: 1px 1px 1px 1px;
+}
+
+/* ===================== 결제 버튼 ======================== */
+
+.shop_likeBtnlist {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 0;
+  height: 50px;
+}
+
+.shop_likeBtnlist a {
+  text-decoration: none;
+}
+
+.shop_likeBtnleft:nth-child(1) {
+  margin-left: 10px;
+}
+
+.likepayBtnw {
+  font-size: 0.8em;
+  color: #477a7b;
+  border: 1px solid #477a7b;
+  padding: 10px 40px;
+  text-align: center;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.likepayBtnb {
+  font-size: 0.8em;
+  background-color: #477a7b;
+  color: white;
+  padding: 10px 40px;
+  text-align: center;
+  cursor: pointer;
+  margin-right: 10px;
+  border: 1px solid #477a7b;
+}
+
+.likepayBtnb:hover {
+  background-color: #365d5e;
+  transition: all .3s;
+}
