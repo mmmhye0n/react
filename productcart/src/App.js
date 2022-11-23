@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import Cartlistadd from '../../productcart/src/subModule/Cartlistadd';
 
 function App() {
@@ -25,12 +25,14 @@ function App() {
     [styleHidden, setstyleHidden] = useState('shop_cartboxnone hidden'),
     [totalPrice, setTotalprice] = useState(39400);
 
+  let [urlChange, seturlChange] = useState('#');
+
   function changeValue(array) {
     setselectItems(array);
   }
 
   function removeSelect() {
-    if (+selectItems !== 0) {
+    if (productbox.length !== 0) {
       if (window.confirm(`정말 삭제하시겠습니까?`)) {
         setProductbox(productbox.filter((v) => !selectItems.includes(v.listNum)));
 
@@ -52,12 +54,14 @@ function App() {
   }
 
   function selectOrder() {
-    if (+selectItems === 0) {
+    if (productbox.length === 0) {
       if (productbox.length === 0) {
         alert('장바구니가 비어있습니다!');
       } else {
         alert('주문할 상품을 선택해 주세요!');
       }
+    } else {
+      seturlChange("./product_shopping_payment.html");
     }
   }
 
@@ -96,10 +100,12 @@ function App() {
         </div>
 
         <div className="shop_Btnright">
-          <a href="#none" className="payBtnw" onClick={selectOrder}>선택상품 주문</a>
-          <a href="#none" className="payBtnb" onClick={() => {
+          <a href={urlChange} className="payBtnw" onClick={selectOrder}>선택상품 주문</a>
+          <a href={urlChange} className="payBtnb" onClick={() => {
             if (productbox.length === 0) {
               alert('장바구니가 비어있습니다!');
+            } else {
+              seturlChange("./product_shopping_payment.html");
             }
           }}>전체상품 주문</a>
         </div>
@@ -122,7 +128,7 @@ function App() {
           <span>{(totalPrice + (totalPrice > 50000 || totalPrice === 0 ? 0 : 3000)).toLocaleString()}원</span>
         </div>
         <div className="tatalBtnall">
-          <a href="#none" className="totalpayBtnb" onClick={selectOrder}>주문하기</a>
+          <a href={urlChange} className="totalpayBtnb" onClick={selectOrder}>주문하기</a>
         </div>
       </article>
     </main>

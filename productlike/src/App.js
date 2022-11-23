@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import Cartlistadd from './subModule/Cartlistadd';
 
 function App() {
@@ -17,6 +17,8 @@ function App() {
         ]),
         [selectItems, setselectItems] = useState([]),
         [styleHidden, setstyleHidden] = useState('shop_likeboxnone hidden');
+
+    let [urlChange, seturlChange] = useState('#');
 
 
     function changeValue(boolean) {
@@ -78,14 +80,18 @@ function App() {
                 </div>
 
                 <div className="shop_likeBtnright">
-                    <a href="#none" className="likepayBtnw" onClick={() => {
+                    <a href={urlChange} className="likepayBtnw" onClick={() => {
                         if (+selectItems === 0) {
                             alert('장바구니에 담을 상품을 선택해 주세요!');
+                        } else {
+                            seturlChange("./product_shopping_cart.html");
                         }
                     }}>장바구니 담기</a>
-                    <a href="#none" className="likepayBtnb" onClick={() => {
+                    <a href={urlChange} className="likepayBtnb" onClick={() => {
                         if (+selectItems === 0) {
                             alert('주문할 상품을 선택해 주세요!');
+                        } else {
+                            seturlChange("./product_shopping_payment.html");
                         }
                     }}>상품 주문하기</a>
                 </div>

@@ -36,7 +36,7 @@ export default function Cartlistadd({ productbox, setProductbox, changeValue, se
     };
 
     function removeList(e) {
-        if (window.confirm('해당 상품을 삭제하시겠습니까?')) {
+        if (window.confirm('이 상품을 삭제하시겠습니까?')) {
             setTmp(true);
             changeValue([...selectItems, (+e.target.name + 1 % productbox.length)]);
             setProductbox(productbox.filter((v) => v.listNum !== +e.target.name));
@@ -63,15 +63,16 @@ export default function Cartlistadd({ productbox, setProductbox, changeValue, se
             {productbox.map((v, i) =>
                 <li className="shop_cartbox1" key={`list${i}`}>
                     <div className="shop_cartleft">
-                        <input
-                            type="checkbox"
-                            onChange={(e) => handleSingleCheck(e.target.checked, v.listNum)}
-                            checked={selectItems.includes(v.listNum) || (rpm.current) === 1 || !!tmp ? true : false}
-                        />
-                        <a href="#" className="cartlistimgbox1">
+                        <div className="agreeAll checkBox">
+                            <input type="checkbox" name={`agreeCheck${v.listNum}`} id={`agreeCheck${v.listNum}`}
+                                onChange={(e) => handleSingleCheck(e.target.checked, v.listNum)}
+                                checked={selectItems.includes(v.listNum) || (rpm.current) === 1 || !!tmp ? true : false} />
+                            <label htmlFor={`agreeCheck${v.listNum}`} id={`agreeCheck${v.listNum}`}></label>
+                        </div>
+                        <a href="./product_shopping_details.html" className="cartlistimgbox1">
                             <img src={v.listSrc} alt="아르르 꿀잠 방석" className="cartlistimg" />
                         </a>
-                        <a href="#" className="cartlisttextbox1">
+                        <a href="./product_shopping_details.html" className="cartlisttextbox1">
                             <strong>{v.listTitle}</strong>
                             <span className="cartpayspan">{v.listPrice.toLocaleString()}원</span>
                             <span>{v.listOption}</span>

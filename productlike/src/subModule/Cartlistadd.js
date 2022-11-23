@@ -27,11 +27,12 @@ export default function Cartlistadd({ productbox, setProductbox, changeValue, se
             {productbox.map((v) =>
                 <li className={`shop_likebox`} key={`list${v.listNum}`}>
                     <div className="shop_likeleft">
-                        <input
-                            type="checkbox"
-                            onChange={(e) => handleSingleCheck(e.target.checked, v.listNum)}
-                            checked={selectItems.includes(v.listNum) ? true : false}
-                        />
+                        <div className="agreeAll checkBox">
+                            <input type="checkbox" name={`agreeCheck${v.listNum}`} id={`agreeCheck${v.listNum}`}
+                                onChange={(e) => handleSingleCheck(e.target.checked, v.listNum)}
+                                checked={selectItems.includes(v.listNum) ? true : false} />
+                            <label htmlFor={`agreeCheck${v.listNum}`} id={`agreeCheck${v.listNum}`}></label>
+                        </div>
                         <a href="#" className={`likelistimgbox`}>
                             <img src={v.listSrc} alt={v.listTitle} className="likelistimg" />
                         </a>

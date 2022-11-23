@@ -14,6 +14,7 @@
   padding: 0;
   list-style-type: none;
   font-family: 'IBMPlexSansKR-Regular';
+  user-select: none;
 }
 
 body {
@@ -193,4 +194,72 @@ main .shop_likeboxnone {
 .likepayBtnb:hover {
   background-color: #365d5e;
   transition: all .3s;
+}
+
+/* ===================== 체크박스 커스텀 ================================ */
+/* ===================== 체크박스 커스텀 ================================ */
+
+/* 체크박스 버튼 커스텀 */
+.checkBox {
+  position: relative;
+  display: block;
+  width: 10%;
+}
+
+.checkBox li {
+  display: flex;
+  margin-top: 5px;
+}
+
+.checkBox input[type="checkbox"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.checkBox input[type="checkbox"]+label {
+  display: inline-block;
+  position: relative;
+  padding-left: 40px;
+  cursor: pointer;
+}
+
+.checkBox input[type="checkbox"]+label:before {
+  content: '✔';
+  position: absolute;
+  left: 8px;
+  bottom: -5px;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #d8d8d8;
+  color: #d8d8d8;
+  border-radius: 2px;
+  box-shadow: none;
+}
+
+.checkBox input[type="checkbox"]:checked+label:before {
+  width: 18px;
+  height: 18px;
+  background: #477A7B;
+  border: 0;
+}
+
+.checkBox input[type="checkbox"]:checked+label:after {
+  content: '';
+  position: absolute;
+  left: 13px;
+  bottom: -5px;
+  width: 10px;
+  height: 10px;
+  color: #fff;
+  border-radius: 2px;
+  box-shadow: none;
 }

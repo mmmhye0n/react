@@ -35,4 +35,8 @@
         margin: 0;
         width: 100%;
     }
+
+    .checkBox {
+        width: 13%;
+    }
 }
