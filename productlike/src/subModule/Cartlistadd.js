@@ -33,10 +33,10 @@ export default function Cartlistadd({ productbox, setProductbox, changeValue, se
                                 checked={selectItems.includes(v.listNum) ? true : false} />
                             <label htmlFor={`agreeCheck${v.listNum}`} id={`agreeCheck${v.listNum}`}></label>
                         </div>
-                        <a href="#" className={`likelistimgbox`}>
+                        <a href="./product_shopping_details.html" className={`likelistimgbox`}>
                             <img src={v.listSrc} alt={v.listTitle} className="likelistimg" />
                         </a>
-                        <a href="#" className={`likelisttextbox`}>
+                        <a href="./product_shopping_details.html" className={`likelisttextbox`}>
                             <strong>{v.listTitle}</strong>
                         </a>
                     </div>
